@@ -208,6 +208,7 @@ namespace Spotlight.Database
             foreach (string ProjectPath in paths)
             {
                 string StageDataPath = ProjectPath + "\\\\StageData";
+                if (!Directory.Exists(StageDataPath)) continue;
                 Zones.AddRange(Directory.GetFiles(StageDataPath, $"*{SM3DWorldZone.MAP_SUFFIX}"));
                 Designs.AddRange(Directory.GetFiles(StageDataPath, $"*{SM3DWorldZone.DESIGN_SUFFIX}"));
                 Sounds.AddRange(Directory.GetFiles(StageDataPath, $"*{SM3DWorldZone.SOUND_SUFFIX}"));
@@ -320,17 +321,6 @@ namespace Spotlight.Database
             GetParameters(MAPinfosByListName, Category.Map);
             GetParameters(DESIGNinfosByListName, Category.Design);
             GetParameters(SOUNDinfosByListName, Category.Sound);
-            foreach (string ProjectPath in paths)
-            {
-                foreach (string file in Directory.GetFiles(ProjectPath + "\\\\ObjectData"))
-                {
-                    string name = Path.GetFileNameWithoutExtension(file);
-                    if (ObjectParameters.ContainsKey(name)) {
-                        continue;
-                    }
-                    Console.WriteLine("missing : " + name);
-                }
-            }
         }
         private void CollectObjectParameter(ref ObjectInfo info, ObjList objList, Category category)
         {

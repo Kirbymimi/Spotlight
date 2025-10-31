@@ -309,7 +309,7 @@ namespace Spotlight.GUI
             this.MiscellaneousGroupBox.Controls.Add(this.SplashTestButton);
             this.MiscellaneousGroupBox.Controls.Add(this.SplashSizeComboBox);
             this.MiscellaneousGroupBox.Controls.Add(this.SplashSizeLabel);
-            this.MiscellaneousGroupBox.Controls.Add(this.DarkModeCheckBox);
+            //this.MiscellaneousGroupBox.Controls.Add(this.DarkModeCheckBox);
             this.MiscellaneousGroupBox.Controls.Add(this.LanguageComboBox);
             this.MiscellaneousGroupBox.Controls.Add(this.LanguageLabel);
             this.MiscellaneousGroupBox.Controls.Add(this.ResetSpotlightButton);
